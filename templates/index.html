@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Detective Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Password Detective Game</h1>
+            <p class="subtitle">Learn about password security by guessing weak passwords!</p>
+        </header>
+        
+        <div class="game-container">
+            <div class="profile-section">
+                <h2>Profile Information</h2>
+                <div class="profile-info">
+                    <div class="profile-item">
+                        <span class="profile-label">Name:</span>
+                        <span id="profile-name">Loading...</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Birthday:</span>
+                        <span id="profile-birthday">Loading...</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Pet:</span>
+                        <span id="profile-pet">Loading...</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Favorite Food:</span>
+                        <span id="profile-food">Loading...</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">Hobby:</span>
+                        <span id="profile-hobby">Loading...</span>
+                    </div>
+                    <div class="profile-item">
+                        <span class="profile-label">House Number:</span>
+                        <span id="profile-house">Loading...</span>
+                    </div>
+                </div>
+                
+                <div class="tip-box">
+                    <p id="lesson-text">Did you know? Many people create passwords using personal information, which makes them easier to guess!</p>
+                </div>
+            </div>
+            
+            <div class="password-section">
+                <h2>Password Cracker</h2>
+                <p>Based on the profile, what password might this person use?</p>
+                
+                <div class="password-input-container">
+                    <input type="text" id="password-input" placeholder="Enter your guess..." autocomplete="off">
+                    <button id="check-btn">Check Password</button>
+                </div>
+                
+                <div class="attempts-container">
+                    <span>Attempts: <span id="attempt-count">0</span></span>
+                    <div class="strength-container">
+                        <div class="strength-label">Password Weakness:</div>
+                        <div class="strength-bar">
+                            <div id="strength-meter" class="strength-meter"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="feedback" class="feedback"></div>
+                
+                <button id="new-profile-btn" class="secondary-btn">New Profile</button>
+                
+                <div class="score-display">
+                    <h3>Score: <span id="score">0</span></h3>
+                    <button id="teacher-mode-btn" class="teacher-btn">Teacher Mode</button>
+                    <div id="teacher-info" class="teacher-info" style="display: none;">
+                        <p>Current Password: <span id="current-password">None</span></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="education-section">
+                <h2>Password Security</h2>
+                
+                <div class="stats-box">
+                    <h3>Common Weak Password Patterns</h3>
+                    <ul id="common-patterns">
+                        <li>Loading...</li>
+                    </ul>
+                </div>
+                
+                <div class="tips-box">
+                    <h3>Tips for Strong Passwords</h3>
+                    <ul id="password-tips">
+                        <li>Loading...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>This educational game teaches about password security. No real passwords are used or stored.</p>
+        </footer>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
